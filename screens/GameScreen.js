@@ -9,7 +9,7 @@ const generateRandomInclusive = (min, max, exclude) => {
   min = Math.ceil(min);
   max = Math.floor(max);
   const randNum = Math.floor(Math.random() * (max - min)) + min;
-  if (rndNum === exclude) {
+  if (randNum === exclude) {
     return generateRandomInclusive(min, max, exclude);
   } else {
     return rndNum;
@@ -57,7 +57,7 @@ const GameScreen = (props) => {
 
   return (
     <View style={styles.screen}>
-      <Text style={defaultStyles.title}>Opponent's Guess</Text>
+      <Text style={DefaultStyles.title}>Opponent's Guess</Text>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card style={styles.buttonContainer}>
         <Button

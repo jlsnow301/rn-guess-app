@@ -48,7 +48,7 @@ const StartGameScreen = (props) => {
   if (confirmed) {
     confirmedOutput = (
       <Card style={styles.summaryContainer}>
-        <Text>You selected:</Text>
+        <BodyText>You selected:</BodyText>
         <NumberContainer>{selectedNumber}</NumberContainer>
         <Button
           title="START GAME"
@@ -65,15 +65,15 @@ const StartGameScreen = (props) => {
       }}
     >
       <View style={styles.screen}>
-        <Text style={styles.title}>Start a New Game!</Text>
+        <TitleText style={styles.title}>Start a New Game!</TitleText>
         <Card style-={styles.inputContainer}>
-          <BodyText>Select a Number:</BodyText>
+          <BodyText style={styles.text}>Select a Number:</BodyText>
           <Input
             style={styles.input}
             blurOnSubmit
             autoCapitalize="none"
-            keyboardType="number-pad"
             autoCorrect={false}
+            keyboardType="number-pad"
             maxLength={2}
             onChangeText={numberInputHandler}
             value={enteredValue}
@@ -137,6 +137,9 @@ const styles = StyleSheet.create({
   summaryContainer: {
     marginTop: 20,
     alignItems: "center",
+  },
+  text: {
+    fontFamily: "open-sans",
   },
 });
 
