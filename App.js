@@ -4,9 +4,9 @@ import * as Font from "expo-font";
 import { AppLoading } from "expo";
 
 import Header from "./components/Header";
+import GameOver from "./screens/GameOver";
 import GameScreen from "./screens/GameScreen";
 import StartGameScreen from "./screens/StartGameScreen";
-import GameOver from "./screens/GameOver";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -45,13 +45,6 @@ export default function App() {
   };
 
   let content = <StartGameScreen onStartGame={startGameHandler} />;
-  content = (
-    <GameOver
-      rounds={guessRounds}
-      userNumber={userNumber}
-      onRestart={configureNewGameHandler}
-    />
-  );
 
   if (userNumber && guessRounds <= 0) {
     content = (
